@@ -36,7 +36,7 @@ install: $(BINARY)
 	install -m 755 $(BINARY) $(DESTDIR)$(PREFIX)/bin
 
 $(BINARY): $(OBJECTS) bin
-	$(QUIET_LINK)$(CC) $(OBJECTS) $(LDFLAGS) $(XMMS_LDFLAGS) $(CURL_LDFLAGS) -o $@ $(LIBS)
+	$(QUIET_LINK)$(CC) $(OBJECTS) -o $@ $(LDFLAGS) $(XMMS_LDFLAGS) $(CURL_LDFLAGS) $(LIBS)
 
 src/%.o : src/%.c
 	$(QUIET_CC)$(CC) $(CFLAGS) $(XMMS_CFLAGS) $(CURL_CFLAGS) $(ENDIAN_CFLAGS) -o $@ -c $<
